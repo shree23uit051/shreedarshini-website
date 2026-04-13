@@ -6,77 +6,143 @@
 <title>Hope Trust</title>
 
 <style>
-body {
-    font-family: Arial;
-    margin: 0;
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
 }
 
-/* Header */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* HEADER */
 header {
-    background: #2c3e50;
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
     color: white;
     padding: 15px;
     display: flex;
     justify-content: space-between;
+    z-index: 1000;
 }
 
 nav a {
     color: white;
     margin: 10px;
     text-decoration: none;
+    transition: 0.3s;
 }
 
-/* Hero */
+nav a:hover {
+    color: orange;
+}
+
+/* HERO */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1509099836639-18ba1795216d');
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac');
     background-size: cover;
+    background-position: center;
     color: white;
-    text-align: center;
-    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+/* BUTTON */
 .btn {
-    background: orange;
-    padding: 10px 20px;
+    background: linear-gradient(45deg, orange, red);
+    padding: 12px 25px;
     color: white;
     text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
 }
 
-/* Sections */
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* SECTIONS */
 section {
-    padding: 40px;
+    padding: 80px 20px;
     text-align: center;
 }
 
-/* Cards */
+/* IMPACT BG */
+.impact {
+    background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');
+    background-size: cover;
+    color: white;
+}
+
+/* ABOUT BG */
+.about {
+    background: #f4f4f4;
+}
+
+/* CARDS */
 .cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .cards div {
-    background: #ecf0f1;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.2);
     padding: 20px;
-    margin: 10px;
+    margin: 15px;
     width: 250px;
+    border-radius: 15px;
+    transition: 0.3s;
 }
 
-/* Form */
+.cards div:hover {
+    transform: translateY(-10px);
+}
+
+/* PROGRAM BG */
+.programs {
+    background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');
+    background-size: cover;
+    color: white;
+}
+
+/* DONATE */
+.donate {
+    background: #222;
+    color: white;
+}
+
+/* CONTACT */
+.contact {
+    background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216');
+    background-size: cover;
+    color: white;
+}
+
+/* FORM */
 input, textarea {
     width: 80%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px;
+    border: none;
+    border-radius: 8px;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     background: black;
     color: white;
-    text-align: center;
     padding: 10px;
 }
+
 </style>
 
 </head>
@@ -84,7 +150,7 @@ footer {
 <body>
 
 <header>
-    <h1>Hope Trust</h1>
+    <h2>Hope Trust</h2>
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -96,13 +162,13 @@ footer {
 
 <!-- HERO -->
 <section class="hero" id="home">
-    <h2>Making Lives Better</h2>
+    <h1>Making Lives Better</h1>
     <p>Together we can create impact</p>
     <a href="#donate" class="btn">Donate Now</a>
 </section>
 
 <!-- IMPACT -->
-<section>
+<section class="impact">
     <h2>Our Impact</h2>
     <div class="cards">
         <div>5000+ Lives Impacted</div>
@@ -112,16 +178,13 @@ footer {
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section class="about" id="about">
     <h2>About Us</h2>
-    <p>Founded in 2020, we aim to help communities with transparency and compassion.</p>
-
-    <h3>Our Values</h3>
-    <p>Integrity | Transparency | Compassion</p>
+    <p>We are committed to helping communities with transparency and compassion.</p>
 </section>
 
 <!-- PROGRAMS -->
-<section id="work">
+<section class="programs" id="work">
     <h2>Our Programs</h2>
     <div class="cards">
         <div>Education Support</div>
@@ -131,18 +194,17 @@ footer {
 </section>
 
 <!-- DONATE -->
-<section id="donate">
-    <h2>Donate</h2>
+<section class="donate" id="donate">
+    <h2>Support Our Cause</h2>
     <p>₹500 feeds a child for a week</p>
-
-    <button class="btn">Donate ₹500</button>
-    <button class="btn">Donate ₹1000</button>
+    <br>
+    <a href="#" class="btn">Donate ₹500</a>
+    <a href="#" class="btn">Donate ₹1000</a>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section class="contact" id="contact">
     <h2>Contact Us</h2>
-
     <form>
         <input type="text" placeholder="Name"><br>
         <input type="email" placeholder="Email"><br>
@@ -152,7 +214,7 @@ footer {
 </section>
 
 <footer>
-    <p>© 2026 Hope Trust</p>
+    <p>© 2026 Hope Trust | All Rights Reserved</p>
 </footer>
 
 </body>
